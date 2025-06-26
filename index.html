@@ -1,334 +1,515 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Website</title>
-    <!-- Linking CSS File -->
-    <link rel="stylesheet" href="style.css" />
-    <!-- Fontawesome link -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <!-- Bootstrap link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
-  </head>
-  <body>
-    <!-- Header & Navbar -->
-    <header class="bg-dark fixed-top">
-      <nav class="container-xxl navbar navbar-expand-lg py-3 bg-dark navbar-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand fw-bold fs-3" href="#">Ishini Kaushalya</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item mx-2">
-                <a class="nav-link" href="#skills">SKILLS</a>
-              </li>
-              <li class="nav-item mx-2">
-                <a class="nav-link" href="#portfolio">PORTFOLIO</a>
-              </li>
-              <li class="nav-item mx-2">
-                <a class="nav-link" href="#about">ABOUT</a>
-              </li>
-              <li class="nav-item mx-2">
-                <a class="nav-link" href="#cv">CURRICULUM VITAE</a>
-              </li>
-              <li class="nav-item mx-2">
-                <a class="nav-link" href="#contact">CONTACT</a>
-              </li>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <!-- Hero or Showcase Section -->
-    <section class="hero d-flex flex-column align-items-center justify-content-center">
-      <div class="text-center">
-        <h1 class="h1 text-white fw-medium fst-italic">Ishini Kaushalya</h1>
-        <h2 class="display-3 text-white fw-bold"> Computer Science <br /> Undergraduate</h2>
-        <a href="#skills" class="btn btn-lg fs-6 fw-medium mt-5 btn-primary p-3">TELL ME MORE</a>
-      </div>
-    </section>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ishini Kaushalya | Cosmic Explorer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Space Background Canvas -->
+    <canvas id="space-bg"></canvas>
     
-    <!-- Skills Section -->
-    <section class="container py-5" id="skills">
-      <div class="row mt-4 py-3">
-        <div class="col-12 d-flex flex-column text-center justify-content-center">
-          <h2>SKILLS</h2>
-          <h5 class="text-secondary fw-normal py-2 fst-italic">Continuously improving my skills and knowledge in the field.</h5>
-        </div>
-      </div>
-      <div class="row d-flex justify-content-between mx-0">
-        <div class="card mt-5 d-flex flex-column align-items-center text-center bg-white p-4" style="width: 25rem">
-          <i class="text-white bg-primary d-flex align-items-center justify-content-center fs-2 rounded-circle fa-solid fa-cart-shopping"></i>
-          <h3 class="mt-4 h4">Front-end Development</h3>
-          <p class="text-center">Proficient in HTML, CSS, and JavaScript. Experienced in responsive web design, building user-friendly interfaces, and using modern frameworks like ReactJS.</p>
-        </div>
-        <div class="card mt-5 d-flex flex-column align-items-center text-center bg-white p-4" style="width: 25rem">
-          <i class="text-white bg-primary d-flex align-items-center justify-content-center fs-2 rounded-circle fa-solid fa-laptop"></i>
-          <h3 class="mt-4 h4">Back-end Development</h3>
-          <p class="text-center">Skilled in server-side programming using technologies like Spring Boot and .NET . Experience working with databases such as MongoDB and MySQL.</p>
-        </div>
-              </div>
-    </section>
-    <!-- Portfolio Section -->
-    <section class="container py-5" id="portfolio">
-      <div class="row mt-4 py-3">
-        <div class="col-12 d-flex flex-column text-center justify-content-center">
-          <h2>PORTFOLIO</h2>
-          <h5 class="text-secondary fw-normal py-2 fst-italic">A collection of projects I've worked on.</h5>
-        </div>
-        <div class="row mt-5 mx-0 justify-content-center align-items-center">
-          <div class="col-lg-3 px-md-3 px-0 col-md-4 col-12 card-wrapper">
-            <div class="card mt-4">
-              <img src="images/Neon.png" class="img-fluid" alt="portfolio-img">
-              <div class="card-body text-center">
-                <h6 class="card-title">Digital Art Gallery</h6>
-                <p class="card-text text-secondary">Java/ReactJs/MongoDb</p>
-              </div>
+    <!-- Spaceship Cursor -->
+    <div class="spaceship-cursor"></div>
+    
+    <!-- Navigation -->
+    <nav class="cosmic-nav">
+        <div class="nav-container">
+            <div class="nav-logo">IK</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-hamburger">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
             </div>
-          </div>
-          <div class="col-lg-3 px-md-3 px-0 col-md-4 card-wrapper">
-            <div class="card mt-4">
-              <img src="images/Pizza.png" class="img-fluid" alt="portfolio-img">
-              <div class="card-body text-center">
-                <h6 class="card-title">Pizza Delivery System</h6>
-                <p class="card-text text-secondary">C#/Visual Studio/MySQL</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 px-md-3 px-0 col-md-4 card-wrapper">
-            <div class="card mt-4">
-              <img src="images/Netflix.png" class="img-fluid" alt="portfolio-img">
-              <div class="card-body text-center">
-                <h6 class="card-title">Netflix Clone Application</h6>
-                <p class="card-text text-secondary">Java/HTML/MySQL</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 px-md-3 px-0 col-md-4 card-wrapper">
-            <div class="card mt-4">
-              <img src="images/Sales.png" class="img-fluid" alt="portfolio-img">
-              <div class="card-body text-center">
-                <h6 class="card-title">Sales DashBoard</h6>
-                <p class="card-text text-secondary">Power BI</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 px-md-3 px-0 col-md-4 card-wrapper">
-            <div class="card mt-4">
-              <img src="images/Movie.png" class="img-fluid" alt="portfolio-img">
-              <div class="card-body text-center">
-                <h6 class="card-title">Movie Downloading Website</h6>
-                <p class="card-text text-secondary">Java/HTML/CSS/PHP</p>
-              </div>
-            </div>
-          </div>
-          
         </div>
-      </div>      
-    </section>
-    <!-- About Section -->
-    <section class="container py-5" id="about">
-      <div class="row mt-4 py-3">
-        <div class="col-12 d-flex flex-column text-center">
-          <h2>ABOUT</h2>
-          <h5 class="text-secondary fw-normal py-2 fst-italic">Learn more about me, my background, and what motivates me.</h5>
-        </div>
-      </div>
-      <div class="row flex-row-reverse flex-md-row mt-5 pt-5">
-        <div class="col-9 col-md-5 text-md-end">
-          <h5>2014-2021</h5>
-          <h5>Early Passion for Technology</h5>
-          <p>From an early age, I became fascinated with computers and programming. Starting with basic HTML and CSS, I gradually expanded my skills to include JavaScript and various frameworks.</p>
-        </div>
-        <div class="col-3 col-md-2 img text-center">
-          <img class="rounded-circle border border-5 border-dark-subtle img-fluid" src="images/ac.jpg" alt="img">
-        </div>
-      </div>
-      <div class="row justify-content-md-end mt-5 pt-5">
-        <div class="col-3 col-md-2 img text-center">
-          <img class="rounded-circle border border-5 border-dark-subtle img-fluid" src="images/avb.jpg" alt="img">
-        </div>
-        <div class="col-9 col-md-5">
-          <h5>2021-Present</h5>
-          <h5>Higher Education</h5>
-          <p>During my university years, I studied computer science and gained hands-on experience through different projects. This period fueled my passion for creating innovative solutions and solving complex problems.</p>
-        </div>
-      </div>
-      <div class="row flex-row-reverse flex-md-row mt-5 pt-5">
-        <div class="col-9 col-md-5 text-md-end">
-          <h5>Future</h5>
-          <h5>Continuing to Make a Difference</h5>
-          <p>I am committed to leveraging my skills and expertise to contribute to meaningful projects that have a positive impact on society. I am eager to take on new challenges and collaborate with talented individuals to create innovative solutions.</p>
-        </div>
-        <div class="col-3 col-md-2 img text-center">
-          <img class="rounded-circle border border-5 border-dark-subtle img-fluid" src="images/dd.jpg" alt="img">
-        </div>
-      </div>
-      
-      <div class="row justify-content-md-center mt-5 pt-5">
-        <div class="col-3 col-md-2 d-flex justify-content-center hire-text">
-          <h2 class="h4 d-flex justify-content-center align-items-center bg-primary text-white rounded-circle border border-5 border-dark-subtle"><span class="d-none d-md-block">Waiting</span></h2>
-        </div>
-      </div>      
-    </section>
-    <!-- Curriculum Vitae Section -->
-    <section class="container py-5" id="cv">
-      <div class="row mt-4 py-3">
-        <div class="col-12 d-flex flex-column text-center">
-          <h2>CURRICULUM VITAE</h2>
-          
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-4 mt-5 order-lg-0 order-1 text-center">
-          <img class="img-fluid rounded-circle border border-5 border-dark-subtle" src="images/2.jpg" alt="profile-img">
-          <h2 class="mt-3">Ishini Kaushalya</h2>
-          <ul class="list-unstyled contact-info">
-            <li><i class="fas fa-envelope me-2"></i> amikaushalya@gmail.com</li>
-            <li><i class="fas fa-phone me-2"></i> +94767719711</li>
-            <li><i class="fas fa-map-marker-alt me-2"></i> Kurunegala</li>
-          </ul>
-          <ul class="social-icons my-5 d-flex justify-content-center">
-           
-            <a href="https://github.com/Ishini-Kaushalya"
-   class="bg-primary mx-2 text-white d-flex align-items-center justify-content-center text-decoration-none rounded-circle"
-   style="width: 40px; height: 40px;">
-   <i class="fa fa-github" aria-hidden="true"></i>
-</a>
+    </nav>
 
-            <a href="https://www.linkedin.com/in/ishini-kaushalya-519507320" class="bg-primary mx-2 text-white d-flex align-items-center justify-content-center text-decoration-none rounded-circle"><i class="fa-brands fa-linkedin-in"></i></a>
-          </ul>
-          <h5>Technical Skills</h5>
-          <ul class="list-unstyled">
-            <li>Java, C#, C, Python, R</li>
-            <li>HTML,CSS,JavaScript,ReactJs</li>
-            <li>MySQL, MongoDB</li>
-            <li>Excel, PowerBI, Minitab</li>
-            <li>Figma</li>
-            
-            <!-- Add or remove skills as needed -->
-          </ul>
-          <h5>Personal Interests</h5>
-          <ul class="list-unstyled">
-            <li>Data Structures and Algorithms</li>
-            <li>Networking</li>
-            <li>Machine Learning</li>
-            <li>Artifical Intelligence</li>
-            <li>Cloud Computing</li>
-            <!-- Add or remove interests as needed -->
-          </ul>
-        </div>
-        <div class="col-lg-7 order-lg-1 order-0 mt-5 text-start">
-          <h3>Profile</h3>
-          <hr>
-          <p>Motivated Computer Science Student with a strong foundation in data
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Ishini <span class="glow">Kaushalya</span></h1>
+                    <h2 class="hero-subtitle">Software Engineer & <span class="typewriter"></span></h2>
+                    <p class="hero-description">Exploring the universe of code, data, and creative solutions</p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="astronaut-container">
+                        <img src="2.jpg" alt="Ishini Kaushalya" class="astronaut-img">
+                        <div class="astronaut-helmet"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span>Explore My Universe</span>
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section about-section">
+            <div class="section-header">
+                <h2 class="section-title">Mission <span class="highlight">Control</span></h2>
+                <p class="section-subtitle">About Me</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3 class="about-title">Hello, Earthling!</h3>
+                    <p>I'm Ishini Kaushalya, a motivated Computer Science undergraduate with a strong foundation in data
 structures, algorithms, and object-oriented programming, coupled with
-extensive experience in backend development. Proficient in backend
+extensive experience in backend development. </p>
+                    <p>Proficient in backend
 frameworks, with a solid understanding of full-stack development
 workflows. Known for excellent problem-solving abilities, strong
 communication skills, attention to detail, and a dedication to continuous
 learning and best practices in software development.</p>
-          <h3>Highlights of Qualifications</h3>
-          <hr>
-          <ul>
-            <li>Dean’s List Awards <br>
-           Faculty of Science - University of Kelaniya<br>
-           Academic year : 20/21
-            </li>
-            <!-- Add or remove qualifications as needed -->
-          </ul>
-          <h3>Education</h3>
-          <hr>
-            <dl>
-            <dt>2017 - 2019</dt>
-            <dd>Maliyadeva Balika Vidyalaya – Kurunegala</dd>
-            <dd>G.C.E Advanced Level – Physical Science</dd>
-          </dl>
+                    <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or mentoring fellow developers.</p>
+                    <div class="about-buttons">
+                        <a href="IK.pdf" class="btn btn-primary" download>Download CV</a>
+                        <a href="#contact" class="btn btn-secondary">Let's Talk</a>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h4 class="stat-number">3.81</h4>
+                            <p class="stat-title">GPA</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h4 class="stat-number">20+</h4>
+                            <p class="stat-title">Projects</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h4 class="stat-number">4</h4>
+                            <p class="stat-title">Clubs</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h4 class="stat-number">8+</h4>
+                            <p class="stat-title">Languages</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-          <dl>
-            <dt>2022 - Present</dt>
-            <dd>Faculty of Science - University of Kelaniya</dd>
-            <dd>Bachelor of Science (Hons) in Computer Science</dd>
-          </dl>
-          <h3>Additional Courses & Training</h3>
-          <hr>
-          <dl>
-            <dt>2025</dt>
-            <dd>Python Certificate Course</dd>
-            <dd>University of Moratuwa</dd>
-          </dl>
-          
-          <h3>Extracurricular Activities</h3>
-          <hr>
-          <dl>
-            <dt>AWS Cloud Club</dt>
-            <dd>Secretory</dd>
-            
-          </dl>
-                <dl>
-            <dt>Statistics and Computer Science Student Association</dt>
-            <dd>Member</dd>
-            
-          </dl>
-           <dl>
-            <dt>LED – UOK</dt>
-            <dd>Member</dd>
-            
-          </dl>
+        <!-- Skills Section -->
+        <section id="skills" class="section skills-section">
+            <div class="section-header">
+                <h2 class="section-title">Tech <span class="highlight">Nebula</span></h2>
+                <p class="section-subtitle">My Skills</p>
+            </div>
+            <div class="skills-content">
+                <div class="skills-categories">
+                    <div class="category-tabs">
+                        <button class="category-tab active" data-category="languages">Languages</button>
+                        <button class="category-tab" data-category="web">Web Tech</button>
+                        <button class="category-tab" data-category="frameworks">Frameworks</button>
+                        <button class="category-tab" data-category="tools">Tools</button>
+                        <button class="category-tab" data-category="soft">Soft Skills</button>
+                    </div>
+                    <div class="category-content">
+                        <div class="skill-category active" id="languages">
+                            <div class="skill-planet" data-skill="Java">
+                                <div class="planet-core"></div>
+                                <div class="planet-ring"></div>
+                                <span class="planet-name">Java</span>
+                            </div>
+                            <div class="skill-planet" data-skill="C#">
+                                <div class="planet-core"></div>
+                                <div class="planet-ring"></div>
+                                <span class="planet-name">C#</span>
+                            </div>
+                            <div class="skill-planet" data-skill="Python">
+                                <div class="planet-core"></div>
+                                <div class="planet-ring"></div>
+                                <span class="planet-name">Python</span>
+                            </div>
+                            <div class="skill-planet" data-skill="R">
+                                <div class="planet-core"></div>
+                                <div class="planet-ring"></div>
+                                <span class="planet-name">R</span>
+                            </div>
+                            <div class="skill-planet" data-skill="C">
+                                <div class="planet-core"></div>
+                                <div class="planet-ring"></div>
+                                <span class="planet-name">C</span>
+                            </div>
+                        </div>
+                        <div class="skill-category" id="web">
+                            <div class="skill-planet" data-skill="HTML">
+                                <div class="planet-core"></div>
+                                <div class="planet-ring"></div>
+                                <span class="planet-name">HTML</span>
+                            </div>
+                            <div class="skill-planet" data-skill="CSS">
+                                <div class="planet-core"></div>
+                                <div class="planet-ring"></div>
+                                <span class="planet-name">CSS</span>
+                            </div>
+                            <div class="skill-planet" data-skill="JavaScript">
+                                <div class="planet-core"></div>
+                                <div class="planet-ring"></div>
+                                <span class="planet-name">JavaScript</span>
+                            </div>
+                            <div class="skill-planet" data-skill="React">
+                                <div class="planet-core"></div>
+                                <div class="planet-ring"></div>
+                                <span class="planet-name">React</span>
+                            </div>
+                        </div>
+                        <div class="skill-category" id="frameworks">
+                            <div class="skill-planet" data-skill="Spring Boot">
+                                <div class="planet-core"></div>
+                                <div class="planet-ring"></div>
+                                <span class="planet-name">Spring Boot</span>
+                            </div>
+                            <div class="skill-planet" data-skill=".NET">
+                                <div class="planet-core"></div>
+                                <div class="planet-ring"></div>
+                                <span class="planet-name">.NET</span>
+                            </div>
+                        </div>
+                        <div class="skill-category" id="tools">
+                            <div class="skill-planet" data-skill="MySQL">
+                                <div class="planet-core"></div>
+                                <div class="planet-ring"></div>
+                                <span class="planet-name">MySQL</span>
+                            </div>
+                            <div class="skill-planet" data-skill="MongoDB">
+                                <div class="planet-core"></div>
+                                <div class="planet-ring"></div>
+                                <span class="planet-name">MongoDB</span>
+                            </div>
+                            <div class="skill-planet" data-skill="PowerBI">
+                                <div class="planet-core"></div>
+                                <div class="planet-ring"></div>
+                                <span class="planet-name">PowerBI</span>
+                            </div>
+                            <div class="skill-planet" data-skill="Figma">
+                                <div class="planet-core"></div>
+                                <div class="planet-ring"></div>
+                                <span class="planet-name">Figma</span>
+                            </div>
+                        </div>
+                        <div class="skill-category" id="soft">
+                            <div class="skill-planet" data-skill="Leadership">
+                                <div class="planet-core"></div>
+                                <div class="planet-ring"></div>
+                                <span class="planet-name">Leadership</span>
+                            </div>
+                            <div class="skill-planet" data-skill="Communication">
+                                <div class="planet-core"></div>
+                                <div class="planet-ring"></div>
+                                <span class="planet-name">Communication</span>
+                            </div>
+                            <div class="skill-planet" data-skill="Problem Solving">
+                                <div class="planet-core"></div>
+                                <div class="planet-ring"></div>
+                                <span class="planet-name">Problem Solving</span>
+                            </div>
+                            <div class="skill-planet" data-skill="Critical Thinking">
+                                <div class="planet-core"></div>
+                                <div class="planet-ring"></div>
+                                <span class="planet-name">Critical Thinking</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        </div>
-      </div>      
-    </section>
-     <!-- Contact Section -->
-     <section class="py-5" id="contact">
-      <div class="container-xxl py-5">
-        <div class="col-12 d-flex flex-column text-center justify-content-center">
-          <h2 class="text-white">CONTACT ME</h2>
-          <h5 class="text-white fw-normal py-2 fst-italic">Interested if I'd be the right fit for your team? Fill in this form and I will respond within 24-48 hours.</h5>
-        </div>
-        <div class="row pt-4 mt-5">
-          <div class="col-12">
-            <form action="https://formsubmit.co/amikaushalya@gmail.com" method="POST">
-              <div class="row d-flex justify-content-center">
-                <div class="col-lg-6">
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="Enter Name*" required>
-                    <label for="floatingInput">Enter Name*</label>
-                  </div>
-                  <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="floatingEmail" placeholder="Enter Email*" required>
-                    <label for="floatingEmail">Enter Email*</label>
-                  </div>
-                  <div class="form-floating mb-3">
-                    <input type="number" class="form-control" id="floatingPassword" placeholder="Enter Phone*" required>
-                    <label for="floatingPassword">Enter Phone*</label>
-                  </div>
+        <!-- Projects Section -->
+        <section id="projects" class="section projects-section">
+            <div class="section-header">
+                <h2 class="section-title">Project <span class="highlight">Galaxy</span></h2>
+                <p class="section-subtitle">My Work</p>
+            </div>
+            <div class="projects-content">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="NeonBrush.png" alt="Digital Art Gallery">
+                        <div class="project-tags">
+                            <span class="project-tag">React</span>
+                            <span class="project-tag">MongoDB</span>
+                            <span class="project-tag">Spring Boot</span>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-title">Digital Art Gallery</h3>
+                        <p class="project-description">Collaboratively developed a Digital Art Gallery application using ReactJS, MongoDB, and Spring Boot. The project followed a microservices-based API architecture, ensuring scalability and efficient data handling.</p>
+                        <div class="project-buttons">
+                            <a href="#" class="btn btn-primary">View Details</a>
+                            <a href="https://github.com/Ishini-Kaushalya/NeonBrush-Digital-Art-Gallery" class="btn btn-secondary">View Code</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-floating col-lg-6">
-                  <textarea class="form-control" placeholder="Leave a comment here" id="floatingMessage" style="height: 205px" required></textarea>
-                  <label for="floatingMessage" class="px-4">Enter Message*</label>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="Pizza.png" alt="Pizza Delivery App">
+                        <div class="project-tags">
+                            <span class="project-tag">C#</span>
+                            <span class="project-tag">.NET</span>
+                            <span class="project-tag">Visual Studio</span>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-title">Pizza Delivery App</h3>
+                        <p class="project-description">Developed a Pizza Delivery Application using Visual Studio with C#, featuring a user-friendly interface for browsing menus, customizing orders, and tracking deliveries. Integrated secure user authentication and admin functionalities.</p>
+                        <div class="project-buttons">
+                            <a href="#" class="btn btn-primary">View Details</a>
+                            <a href="https://github.com/Ishini-Kaushalya/Pizza-Delivery-System" class="btn btn-secondary">View Code</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-12 mt-5 d-flex justify-content-center">
-                  <button class="btn btn-lg btn-outline-light">SEND MESSAGE</button>
+                  <div class="project-card">
+                    <div class="project-image">
+                        <img src="Sales.png" alt="Sales DashBoard">
+                        <div class="project-tags">
+                            <span class="project-tag">Power BI</span>
+                            
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-title">Sales DashBoard</h3>
+                        <p class="project-description">Created an interactive sales dashboard using Power BI to visualize and analyze key business metrics. Integrated multiple data sources and applied data transformation techniques to prepare the dataset.The dashboard includes dynamic charts and KPIs for sales trends, regional performance, top-selling products, and customer segmentation.  </p>
+                        <div class="project-buttons">
+                            <a href="#" class="btn btn-primary">View Details</a>
+                            <a href="https://github.com/Ishini-Kaushalya/Sales-Dashboard" class="btn btn-secondary">View Code</a>
+                        </div>
+                    </div>
                 </div>
-              </div>
-  
-            </form>
-          </div>
+                     <div class="project-card">
+                    <div class="project-image">
+                        <img src="mini.png" alt="Mini Compiler">
+                        <div class="project-tags">
+                            <span class="project-tag">Java</span>
+                            <span class="project-tag">Text Editor</span>
+                            <span class="project-tag">Regex</span>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-title">Sales DashBoard</h3>
+                        <p class="project-description">Developed a MiniLang Compiler using Java to demonstrate core principles of compiler design including lexical, syntax, semantic analysis, and intermediate code generation. Implemented a custom grammar and recursive descent parser to validate program structure. Integrated regular expressions for tokenizing source code and used manual symbol table checks for semantic validation.  </p>
+                        <div class="project-buttons">
+                            <a href="#" class="btn btn-primary">View Details</a>
+                            <a href="https://github.com/Ishini-Kaushalya/Mini-Compiler-Development-Project" class="btn btn-secondary">View Code</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="Netflix.png" alt="Netflix Clone">
+                        <div class="project-tags">
+                            <span class="project-tag">React</span>
+                            <span class="project-tag">Spring Boot</span>
+                            <span class="project-tag">MySQL</span>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-title">Netflix Clone for Enterprise</h3>
+                        <p class="project-description">Development Group Project that developed Netflix clone application with ReactJS, Spring Boot, MySQL, hibernates by following API architecture that supports stripe payment and developed for both user and admin operations.</p>
+                        <div class="project-buttons">
+                            <a href="#" class="btn btn-primary">View Details</a>
+                            <a href="https://github.com/Ishini-Kaushalya/Netflix-Clone" class="btn btn-secondary">View Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="section education-section">
+            <div class="section-header">
+                <h2 class="section-title">Knowledge <span class="highlight">Constellation</span></h2>
+                <p class="section-subtitle">Education & Achievements</p>
+            </div>
+            <div class="education-content">
+                <div class="timeline">
+                  <div class="timeline-item">
+                        <div class="timeline-date">2010 - 2014</div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Early Passion for Technology</h3>
+                            <p class="timeline-subtitle">From an early age, I became fascinated with computers and programming. Starting with basic HTML and CSS, I gradually expanded my skills to include JavaScript and various frameworks.</p>
+                            
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">2015 - 2016</div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">G.C.E Ordinary Level - English Medium</h3>
+                            <p class="timeline-subtitle">Mahasen National School</p>
+                            <p class="timeline-description">A7 B2</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2017 - 2020</div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">G.C.E Advanced Level - Physical Science</h3>
+                            <p class="timeline-subtitle">Maliyadeva Balika Vidyalaya</p>
+                            <p class="timeline-description">B1 C2</p>
+
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2023 - Present</div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Bachelor of Science (Hons) in Computer Science</h3>
+                            <p class="timeline-subtitle">University of Kelaniya</p>
+                            <p class="timeline-description">During my university years, I studied computer science and gained hands-on experience through different projects. This period fueled my passion for creating innovative solutions and solving complex problems.</p>
+                        </div>
+                    </div>
+<div class="timeline-item">
+                        <div class="timeline-date">Future</div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Continuing to Make a Difference</h3>
+                            <p class="timeline-subtitle">I am committed to leveraging my skills and expertise to contribute to meaningful projects that have a positive impact on society. I am eager to take on new challenges and collaborate with talented individuals to create innovative solutions.
+
+</p>
+                           
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="section-header">
+                <h2 class="section-title">Transmission <span class="highlight">Hub</span></h2>
+                <p class="section-subtitle">Get In Touch</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3 class="contact-title">Email</h3>
+                            <p class="contact-text">amikaushalya@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3 class="contact-title">Phone</h3>
+                            <p class="contact-text">+94 76 771 9711</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3 class="contact-title">GitHub</h3>
+                            <p class="contact-text"><a href="https://github.com/Ishini-Kaushalya">github.com/ishini-kaushalya</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3 class="contact-title">LinkedIn</h3>
+                            <p class="contact-text"><p class="contact-text"><a href="https://www.linkedin.com/in/ishini-kaushalya-519507320/">linkedin.com/in/ishini-kaushalya</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+    <form action="https://formsubmit.co/amikaushalya@gmail.com" method="POST">
+        <!-- Required hidden inputs for proper functionality -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="New Contact Form Submission">
+        <input type="text" name="_honey" style="display:none"> <!-- Honeypot for spam protection -->
+
+        <div class="form-group">
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
         </div>
-       </div>
-     </section>
-     <!-- Footer -->
-     <footer>
-      <div class="container-xxl flex-wrap pt-3 d-flex align-items-center justify-content-center justify-content-md-between">
-       
-        
-      </div>
-     </footer>
-    
-     <!-- Bootstrap script link -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-  </body>
+        <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+        </div>
+        <div class="form-group">
+            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+</div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="cosmic-footer">
+        <div class="footer-content">
+            <div class="footer-logo">IK</div>
+            <div class="footer-links">
+                <a href="#home" class="footer-link">Home</a>
+                <a href="#about" class="footer-link">About</a>
+                <a href="#skills" class="footer-link">Skills</a>
+                <a href="#projects" class="footer-link">Projects</a>
+                <a href="#contact" class="footer-link">Contact</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://github.com/Ishini-Kaushalya" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/ishini-kaushalya-519507320/" class="social-icon"><i class="fab fa-linkedin"></i></a>
+               
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Ishini Kaushalya. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="script.js"></script>
+</body>
 </html>
