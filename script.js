@@ -123,7 +123,6 @@ function initMobileNav() {
         });
     });
 }
-
 // Skill Tabs
 function initSkillTabs() {
     const tabs = document.querySelectorAll('.category-tab');
